@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    >
+
+    <LinearLayout
+		android:layout_gravity="center_vertical"
+		android:id="@+id/toolbar"
+		android:layout_width="match_parent"
+		android:background="@color/colorAccent"
+		android:elevation="4dp"
+        android:padding="10dp"
+		android:layout_height="wrap_content">
+
+            <LinearLayout
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="SPK PEMILIHAN PERAWAT TERBAIK DENGAN METODE MOORA PADA RSUD ENGKU HAJI DAUD" 
+                android:textColor="@color/colorBlack"/>
+
+        </LinearLayout>
+	</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="1"
+                android:orientation="vertical">
+
+           <LinearLayout        
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                    android:weightSum="1"
+                >
+
+                <LinearLayout
+                android:id="@+id/linAlternatif"    
+                android:layout_width="0dp"
+                        android:layout_weight="0.49"
+                android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                android:background="@drawable/edge"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/alternative"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ALTERNATIF"/>
+
+            </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"/>
+
+                   <LinearLayout
+                    android:id="@+id/linKriteria"    
+                    android:layout_width="0dp"
+                    android:layout_weight="0.49"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:background="@drawable/edge"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    >
+
+					<ImageView
+						android:layout_width="80dp"
+						android:layout_height="70dp"
+						android:src="@drawable/category"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="KRITERIA"/>
+
+            </LinearLayout>
+                
+            </LinearLayout>
+
+            <LinearLayout       
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.4"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                    android:weightSum="1"
+                >
+
+                <LinearLayout
+                android:id="@+id/linProses"    
+                android:layout_width="0dp"
+                        android:layout_weight="0.49"
+                android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                android:background="@drawable/edge"
+                android:orientation="vertical"
+                android:padding="30dp"
+                android:gravity="center_vertical|center_horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/proccess"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PROSES SPK"/>
+
+            </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"/>
+
+                   <LinearLayout
+                    android:id="@+id/linHistory"    
+                    android:layout_width="0dp"
+                    android:layout_weight="0.49"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:background="@drawable/edge"
+                    android:orientation="vertical"
+                    android:padding="30dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    >
+
+					<ImageView
+						android:layout_width="80dp"
+						android:layout_height="70dp"
+						android:src="@drawable/history"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="HISTORY"/>
+
+            </LinearLayout>
+                
+            </LinearLayout>
+
+            <LinearLayout        
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                    android:weightSum="1"
+                >
+
+                <LinearLayout
+                android:id="@+id/linSetting"    
+                android:layout_width="0dp"
+                        android:layout_weight="0.49"
+                android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                android:background="@drawable/edge"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center_vertical|center_horizontal"
+                >
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/settings"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TAMBAH USER"/>
+
+            </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.02"/>
+
+                   <LinearLayout
+                    android:id="@+id/linLoout"    
+                    android:layout_width="0dp"
+                    android:layout_weight="0.49"
+                    android:layout_height="wrap_content"
+                    android:elevation="1dp"
+                    android:background="@drawable/edge"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    >
+
+					<ImageView
+						android:layout_width="80dp"
+						android:layout_height="70dp"
+						android:src="@drawable/logout"/>
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="LOG OUT"/>
+
+            </LinearLayout>
+                
+            </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
