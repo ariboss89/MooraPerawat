@@ -10,9 +10,9 @@ namespace AplikasiMoora.Services
 
         public string ApiUrl()
         {
-            string apiUrl = $"http://{app.getAccessKey("ip")}/api/";
+           string apiUrl = $"http://{app.getAccessKey("ip")}/api/";
 
-            //string apiUrl = "http://10.211.55.3/api/";
+           //string apiUrl = "http://192.168.43.214:8001/api/";
 
             return apiUrl;
         }
@@ -89,14 +89,19 @@ namespace AplikasiMoora.Services
             return $"{ApiUrl()}Hasil/UpdateHasil";
         }
 
-        public string UpdateKet()
-        {
-            return $"{ApiUrl()}Hasil/UpdateKet";
-        }
+        //public string UpdateKet()
+        //{
+        //    return $"{ApiUrl()}Hasil/UpdateKet";
+        //}
 
         public string CheckAlternatif(string nama, string kriteria)
         {
             return $"{ApiUrl()}Hasil/CheckAlternatif?nama={nama}&kriteria={kriteria}";
+        }
+
+        public string DeleteHasil(int Id)
+        {
+            return $"{ApiUrl()}hasil/deletehasil?Id=" + Id;
         }
 
         //login

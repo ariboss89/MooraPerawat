@@ -20,7 +20,7 @@ namespace AplikasiMoora.Activities
     public class KriteriaAddActivity : AppCompatActivity
     {
         EditText edtNama, edtNilai;
-        ImageView imgSave;
+        ImageView imgSave, imgArrow;
         KriteriaService ksr = new KriteriaService();
         tb_kriteria tbk = new tb_kriteria();
 
@@ -33,7 +33,21 @@ namespace AplikasiMoora.Activities
             edtNilai = FindViewById<EditText>(Resource.Id.edtNilai);
             imgSave = FindViewById<ImageView>(Resource.Id.imgSave);
 
-            imgSave.Click += ImgSave_Click; ;
+            imgSave.Click += ImgSave_Click;
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(KriteriaActivity));
+            StartActivity(intent);
+        }
+
+        public override void OnBackPressed()
+        {
+
         }
 
         private void ImgSave_Click(object sender, EventArgs e)

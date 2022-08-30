@@ -25,7 +25,7 @@ namespace AplikasiMoora.Activities
         tb_alternatif tba = new tb_alternatif();
         List<string> listKelamin = new List<string>();
         AlternatifService asr = new AlternatifService();
-        ImageView imgUpdate;
+        ImageView imgUpdate, imgArrow;
         Button btnDelete;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -57,6 +57,15 @@ namespace AplikasiMoora.Activities
             edtAlamat.Text = StaticAlternatif.alamat;
             edtKontak.Text = StaticAlternatif.kontak;
             spinJenis.SelectedItem.Equals(StaticAlternatif.jenis_kelamin);
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(AlternatifActivity));
+            StartActivity(intent);
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -132,6 +141,11 @@ namespace AplikasiMoora.Activities
             {
                 Toast.MakeText(this, "Update Alternatif "+x.ToString(), ToastLength.Short).Show();
             }
+        }
+
+        public override void OnBackPressed()
+        {
+
         }
     }
 }

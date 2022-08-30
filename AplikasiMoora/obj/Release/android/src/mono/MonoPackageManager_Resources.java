@@ -2,6 +2,7 @@ package mono;
 public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "AplikasiMoora.dll" comes first in this list. */
+		"AplikasiMoora.dll",
 		"Xamarin.AndroidX.AppCompat.dll",
 		"Xamarin.AndroidX.Core.dll",
 		"Xamarin.AndroidX.CustomView.dll",
@@ -11,7 +12,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.AndroidX.Lifecycle.LiveData.Core.dll",
 		"Xamarin.AndroidX.Lifecycle.ViewModel.dll",
 		"Xamarin.AndroidX.Loader.dll",
-		"AplikasiMoora.dll",
 		"Newtonsoft.Json.dll",
 		"System.Net.Http.Extensions.dll",
 		"System.Net.Http.Primitives.dll",

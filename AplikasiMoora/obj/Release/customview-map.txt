@@ -24,7 +24,6 @@ EditText;obj/Release/res/layout/kriteriaadd_layout.xml
 EditText;obj/Release/res/layout/kriteriaupdate_layout.xml
 EditText;obj/Release/res/layout/login_layout.xml
 EditText;obj/Release/res/layout/proses_layout.xml
-EditText;obj/Release/res/layout/prosesadd_layout.xml
 EditText;obj/Release/res/layout/prosesupdate_layout.xml
 EditText;obj/Release/res/layout/registerlayout.xml
 external-cache-path;/Users/ariboss89/Projects/Public Project/AplikasiMoora/AplikasiMoora/obj/Release/lp/38/jl/res/xml/xamarin_essentials_fileprovider_file_paths.xml
@@ -47,6 +46,7 @@ ImageView;obj/Release/res/layout/prosesupdate_layout.xml
 ImageView;obj/Release/res/layout/registerlayout.xml
 ImageView;obj/Release/res/layout/spk_layout.xml
 item;obj/Release/res/menu/menu_main.xml
+item;obj/Release/res/values/array.xml
 item;obj/Release/res/values/styles.xml
 LinearLayout;obj/Release/res/layout/alternatif_layout.xml
 LinearLayout;obj/Release/res/layout/alternatifadd_layout.xml
@@ -80,6 +80,7 @@ path;obj/Release/res/drawable/arrow.xml
 path;obj/Release/res/drawable/home.xml
 path;obj/Release/res/drawable/logout.xml
 paths;/Users/ariboss89/Projects/Public Project/AplikasiMoora/AplikasiMoora/obj/Release/lp/38/jl/res/xml/xamarin_essentials_fileprovider_file_paths.xml
+resources;obj/Release/res/values/array.xml
 resources;obj/Release/res/values/colors.xml
 resources;obj/Release/res/values/dimens.xml
 resources;obj/Release/res/values/ic_launcher_background.xml
@@ -109,7 +110,9 @@ Spinner;obj/Release/res/layout/alternatifadd_layout.xml
 Spinner;obj/Release/res/layout/alternatifupdate_layout.xml
 Spinner;obj/Release/res/layout/historylayout.xml
 Spinner;obj/Release/res/layout/prosesadd_layout.xml
+Spinner;obj/Release/res/layout/prosesupdate_layout.xml
 string;obj/Release/res/values/strings.xml
+string-array;obj/Release/res/values/array.xml
 stroke;obj/Release/res/drawable/edge.xml
 style;obj/Release/res/values/styles.xml
 TextView;obj/Release/res/layout/alternatiflistview_layout.xml

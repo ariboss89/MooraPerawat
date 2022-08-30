@@ -34,6 +34,7 @@ namespace AplikasiMoora.Activities
         ConfigService csh = new ConfigService();
         tb_config tbc = new tb_config();
         tb_keputusan tbk = new tb_keputusan();
+        ImageView imgArrow;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -48,11 +49,20 @@ namespace AplikasiMoora.Activities
 
             TampilPerankingan();
             IdKeputusan();
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ProsesActivity));
+            StartActivity(intent);
         }
 
         public override void OnBackPressed()
         {
-            base.OnBackPressed();
+
         }
 
         private void BtnSimpan_Click(object sender, EventArgs e)
@@ -134,6 +144,7 @@ namespace AplikasiMoora.Activities
         void TampilPerankingan()
         {
             listKeputusan = fsr.HasilKeterangan();
+
             perankinganAdapter = new PerankinganAdapter(this, listKeputusan);
             lvPerankingan.Adapter = perankinganAdapter;
         }

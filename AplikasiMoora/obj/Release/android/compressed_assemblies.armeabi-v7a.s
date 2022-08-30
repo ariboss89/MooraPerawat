@@ -28,7 +28,7 @@
 .L.compressed_assembly_descriptors:
 	/* 0: AplikasiMoora.dll */
 	/* uncompressed_file_size */
-	.long	186880
+	.long	189952
 	/* loaded */
 	.byte	0
 	/* data */
@@ -37,7 +37,7 @@
 
 	/* 1: Java.Interop.dll */
 	/* uncompressed_file_size */
-	.long	162816
+	.long	163840
 	/* loaded */
 	.byte	0
 	/* data */
@@ -46,7 +46,7 @@
 
 	/* 2: Mono.Android.dll */
 	/* uncompressed_file_size */
-	.long	1163264
+	.long	1166336
 	/* loaded */
 	.byte	0
 	/* data */

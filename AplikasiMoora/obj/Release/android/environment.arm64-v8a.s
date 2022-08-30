@@ -24,18 +24,30 @@ application_config:
 	.byte	0
 	/* jni_add_native_method_registration_attribute_present */
 	.byte	0
+	/* have_runtime_config_blob */
+	.byte	0
+	/* have_assembly_store */
+	.byte	1
 	/* bound_exception_type */
 	.byte	1
 	/* package_naming_policy */
+	.zero	2
 	.word	3
 	/* environment_variable_count */
 	.word	12
 	/* system_property_count */
 	.word	0
+	/* number_of_assemblies_in_apk */
+	.word	29
+	/* bundled_assembly_name_width */
+	.word	0
+	/* number_of_assembly_store_files */
+	.word	2
+	/* mono_components_mask */
+	.word	0
 	/* android_package_name */
-	.zero	4
 	.xword	.L.env.str.1
-	.size	application_config, 32
+	.size	application_config, 48
 	.section	.rodata.env.str.2,"aMS",@progbits,1
 	.type	.L.env.str.2, @object
 .L.env.str.2:
@@ -73,7 +85,7 @@ mono_aot_mode_name:
 	.section	.rodata.env.str.8,"aMS",@progbits,1
 	.type	.L.env.str.8, @object
 .L.env.str.8:
-	.asciz	"248a19f5-1c10-4358-9663-b3d8c8295eae"
+	.asciz	"f303b8d9-60fa-4d53-ac4d-87554e0bb4a1"
 	.size	.L.env.str.8, 37
 	.section	.rodata.env.str.9,"aMS",@progbits,1
 	.type	.L.env.str.9, @object
@@ -129,3 +141,307 @@ app_environment_variables:
 	.global	app_system_properties
 app_system_properties:
 	.size	app_system_properties, 0
+
+	/* Bundled assembly name buffers, all 0 bytes long */
+	.section	.bss.bundled_assembly_names,"aw",@nobits
+
+	/* Bundled assemblies data */
+	.section	.data.bundled_assemblies,"aw",@progbits
+	.type	bundled_assemblies, @object
+	.p2align	3
+	.global	bundled_assemblies
+bundled_assemblies:
+
+
+	/* Assembly store individual assembly data */
+	.section	.data.assembly_store_bundled_assemblies,"aw",@progbits
+	.type	assembly_store_bundled_assemblies, @object
+	.p2align	3
+	.global	assembly_store_bundled_assemblies
+assembly_store_bundled_assemblies:
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	/* image_data */
+	.xword	0
+	/* debug_info_data */
+	.xword	0
+	/* config_data */
+	.xword	0
+	/* descriptor */
+	.xword	0
+
+	.size	assembly_store_bundled_assemblies, 928
+
+	/* Assembly store data */
+	.section	.data.assembly_stores,"aw",@progbits
+	.type	assembly_stores, @object
+	.p2align	3
+	.global	assembly_stores
+assembly_stores:
+	/* data_start */
+	.xword	0
+	/* assembly_count */
+	.word	0
+	/* assemblies */
+	.zero	4
+	.xword	0
+
+	/* data_start */
+	.xword	0
+	/* assembly_count */
+	.word	0
+	/* assemblies */
+	.zero	4
+	.xword	0
+
+	.size	assembly_stores, 48

@@ -9,6 +9,7 @@
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="30" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <application android:allowBackup="true" android:icon="@drawable/rs" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:usesCleartextTraffic="true" android:name="android.app.Application" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:icon="@drawable/rs" android:label="SPK Moora" android:theme="@style/AppTheme.NoActionBar" android:name="crc64bb8866cb4dc8a251.MainActivity" />
@@ -18,12 +19,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="SpkActivity" android:name="crc64f5a02a4d80b0f816.SpkActivity" android:exported="true">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
+    <activity android:label="SpkActivity" android:name="crc64f5a02a4d80b0f816.SpkActivity" />
     <activity android:label="HasilActivity" android:name="crc64f5a02a4d80b0f816.HasilActivity" />
     <activity android:label="AlternatifActivity" android:name="crc64f5a02a4d80b0f816.AlternatifActivity" />
     <activity android:label="KriteriaActivity" android:name="crc64f5a02a4d80b0f816.KriteriaActivity" />

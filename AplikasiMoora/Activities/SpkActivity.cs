@@ -17,7 +17,7 @@ using AplikasiMoora.Services;
 
 namespace AplikasiMoora.Activities
 {
-    [Activity(Label = "SpkActivity", MainLauncher =true)]
+    [Activity(Label = "SpkActivity")]
     public class SpkActivity : AppCompatActivity
     {
         ListView lvNormalisasi, lvOptimasi;
@@ -30,6 +30,7 @@ namespace AplikasiMoora.Activities
         List<normalisasi> listNormalisasi = new List<normalisasi>();
         List<optimasi> listOptimasi = new List<optimasi>();
         FormulaService fsr = new FormulaService();
+        ImageView imgArrow;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,6 +46,15 @@ namespace AplikasiMoora.Activities
 
             TampilNormalisasi();
             TampilOptimasi();
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ProsesActivity));
+            StartActivity(intent);
         }
 
         private void BtnHasil_Click(object sender, EventArgs e)
@@ -53,6 +63,11 @@ namespace AplikasiMoora.Activities
 
             Intent intent = new Intent(this, typeof(HasilActivity));
             StartActivity(intent);
+        }
+
+        public override void OnBackPressed()
+        {
+
         }
 
         void TampilNormalisasi()

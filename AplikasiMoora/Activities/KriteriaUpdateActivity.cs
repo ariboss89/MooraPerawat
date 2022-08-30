@@ -21,7 +21,7 @@ namespace AplikasiMoora.Activities
     public class KriteriaUpdateActivity : AppCompatActivity
     {
         EditText edtId, edtNama, edtNilai;
-        ImageView imgUpdate;
+        ImageView imgUpdate, imgArrow;
         Button btnDelete;
         KriteriaService ksr = new KriteriaService();
         tb_kriteria tbk = new tb_kriteria();
@@ -43,6 +43,15 @@ namespace AplikasiMoora.Activities
 
             imgUpdate.Click += ImgUpdate_Click;
             btnDelete.Click += BtnDelete_Click;
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(KriteriaActivity));
+            StartActivity(intent);
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -103,6 +112,11 @@ namespace AplikasiMoora.Activities
             {
                 Toast.MakeText(this, "Update Kriteria Gagal " + x.ToString(), ToastLength.Short).Show();
             }
+        }
+
+        public override void OnBackPressed()
+        {
+
         }
     }
 }

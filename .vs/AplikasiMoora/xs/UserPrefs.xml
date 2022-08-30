@@ -1,40 +1,31 @@
 ﻿<Properties StartupConfiguration="{B7685490-2BB6-4580-A8B6-4C3810E0A768}|Default">
   <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="AplikasiMoora/Resources/layout/HistoryLayout.xml" Line="1" Column="1" />
-      <File FileName="AplikasiMoora/Services/ApiService.cs" Line="17" Column="27" />
-      <File FileName="AplikasiMoora/Resources/layout/Login_Layout.xml" Line="23" Column="17" />
-      <File FileName="AplikasiMoora/Activities/AlternatifUpdateActivity.cs" Line="17" Column="1" />
-      <File FileName="AplikasiMoora/Activities/LoginActivity.cs" Line="19" Column="23" />
+      <File FileName="AplikasiMoora/Resources/layout/Alternatif_Layout.xml" Line="8" Column="40" />
+      <File FileName="AplikasiMoora/Resources/layout/ProsesUpdate_Layout.xml" />
+      <File FileName="AplikasiMoora/Resources/layout/Proses_Layout.xml" />
+      <File FileName="AplikasiMoora/Resources/values/strings.xml" />
+      <File FileName="AplikasiMoora/Resources/layout/ProsesAdd_Layout.xml" />
+      <File FileName="AplikasiMoora/Resources/values/array.xml" />
+      <File FileName="AplikasiMoora/Resources/values/colors.xml" />
+      <File FileName="AplikasiMoora/Activities/ProsesAdd_Activity.cs" />
+      <File FileName="AplikasiMoora/Activities/ProsesUpdate_Activity.cs" />
+      <File FileName="AplikasiMoora/Services/HasilService.cs" />
+      <File FileName="AplikasiMoora/Adapter/AlternatifAdapter.cs" Line="20" Column="51" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="AplikasiMoora" expanded="True" selected="True">
-            <Node name="AplikasiMoora" expanded="True">
-              <Node name="Activities" expanded="True" />
-              <Node name="Adapter" expanded="True" />
-              <Node name="Helper" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Properties" expanded="True" />
-              <Node name="Resources" expanded="True">
-                <Node name="layout" expanded="True" />
-              </Node>
-              <Node name="Services" expanded="True" />
-              <Node name="StaticDetails" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="AplikasiMoora" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.AplikasiMoora AndroidDesignerPreferredTheme="AppTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.nexus_6_oreo_8_1_-_api_27" />
+  <MonoDevelop.Ide.ItemProperties.AplikasiMoora AndroidDesignerPreferredTheme="AppTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.pixel_2_pie_9_0_-_api_28" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/ariboss89/Projects/Public Project/AplikasiMoora/AplikasiMoora/Services/AlternatifService.cs" relfile="AplikasiMoora/Services/AlternatifService.cs" line="76" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

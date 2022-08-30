@@ -1,14 +1,14 @@
 	.type	compressed_assembly_data_0, %object
 	.local	compressed_assembly_data_0
-	.comm	compressed_assembly_data_0,186880,16
+	.comm	compressed_assembly_data_0,189952,16
 
 	.type	compressed_assembly_data_1, %object
 	.local	compressed_assembly_data_1
-	.comm	compressed_assembly_data_1,162816,16
+	.comm	compressed_assembly_data_1,163840,16
 
 	.type	compressed_assembly_data_2, %object
 	.local	compressed_assembly_data_2
-	.comm	compressed_assembly_data_2,1163264,16
+	.comm	compressed_assembly_data_2,1166336,16
 
 	.type	compressed_assembly_data_3, %object
 	.local	compressed_assembly_data_3

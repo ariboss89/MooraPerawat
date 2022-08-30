@@ -121,26 +121,44 @@ namespace AplikasiMoora.Services
             }
         }
 
-        public async void UpdateKet(tb_hasil hsl)
+        //public async void UpdateKet(tb_hasil hsl)
+        //{
+        //    try
+        //    {
+        //        httpClient = new HttpClient();
+        //        string url = api.UpdateKet();
+        //        var uri = new Uri(url);
+        //        httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        //        var json = JsonConvert.SerializeObject(hsl);
+        //        var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
+        //        response = await httpClient.PutAsync(uri, content);
+        //    }
+        //    catch (Exception)
+        //    {
+        //        Toast.MakeText(Application.Context, "Update Keterangan Failed !", ToastLength.Short).Show();
+        //    }
+        //}
+
+        public async void Deletehasil(int Id)
         {
             try
             {
-                httpClient = new HttpClient();
-                string url = api.UpdateKet();
+                HttpClient myClient = new HttpClient();
+                string url = api.DeleteHasil(Id);
                 var uri = new Uri(url);
-                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                myClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                var json = JsonConvert.SerializeObject(hsl);
-                var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                response = await httpClient.PutAsync(uri, content);
+                response = await myClient.DeleteAsync(uri);
+
+                Toast.MakeText(Application.Context, "Data Alternatif Deleted", ToastLength.Long).Show();
+
             }
             catch (Exception)
             {
-                Toast.MakeText(Application.Context, "Update Keterangan Failed !", ToastLength.Short).Show();
+                Toast.MakeText(Application.Context, "Delete Alternatif Failed !", ToastLength.Short).Show();
             }
         }
-
-
 
     }
 }

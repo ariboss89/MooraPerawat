@@ -24,7 +24,7 @@ namespace AplikasiMoora.Activities
         tb_alternatif tba = new tb_alternatif();
         List<string> listKelamin = new List<string>();
         AlternatifService asr = new AlternatifService();
-        ImageView imgSave;
+        ImageView imgSave, imgArrow;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -46,6 +46,14 @@ namespace AplikasiMoora.Activities
 
             imgSave.Click += ImgSave_Click;
 
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(AlternatifActivity));
+            StartActivity(intent);
         }
 
         private void ImgSave_Click(object sender, EventArgs e)
@@ -92,6 +100,11 @@ namespace AplikasiMoora.Activities
                 intent.SetFlags(ActivityFlags.NewTask);
                 StartActivity(intent);
             }
+        }
+
+        public override void OnBackPressed()
+        {
+
         }
     }
 }

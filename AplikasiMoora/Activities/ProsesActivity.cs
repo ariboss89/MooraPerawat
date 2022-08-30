@@ -24,7 +24,7 @@ namespace AplikasiMoora.Activities
         ListView lvSpk;
         Button btnSpk;
         EditText edtSearch;
-        ImageView imgAdd;
+        ImageView imgAdd, imgArrow;
         SpkAdapter spkAdapter;
         List<tb_hasil> listHasil = new List<tb_hasil>();
         tb_hasil tbh = new tb_hasil();
@@ -49,6 +49,29 @@ namespace AplikasiMoora.Activities
             TampilHasil();
 
             lvSpk.ItemClick += LvSpk_ItemClick;
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+
+            edtSearch.TextChanged += EdtSearch_TextChanged;
+        }
+
+        private void EdtSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
+        {
+            var data = listHasil.Where(x => x.nama.Contains(edtSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+            spkAdapter= new SpkAdapter(this, data);
+            lvSpk.Adapter = spkAdapter;
+        }
+
+        public override void OnBackPressed()
+        {
+
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
         }
 
         private void ImgAdd_Click(object sender, EventArgs e)

@@ -59,7 +59,7 @@ namespace AplikasiMoora.Activities
 
         public override void OnBackPressed()
         {
-            base.OnBackPressed();
+
         }
 
         private void ImgArrow_Click(object sender, EventArgs e)

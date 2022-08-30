@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using Android;
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -13,14 +14,16 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
+using AndroidX.Core.Content;
 using AplikasiMoora.Helper;
 using AplikasiMoora.Models;
 using AplikasiMoora.Services;
+using Java.Net;
 using Newtonsoft.Json;
 
 namespace AplikasiMoora.Activities
 {
-    [Activity(Label = "SPK Moora", Icon = "@drawable/rs", MainLauncher =true)]
+    [Activity(Label = "SPK Moora", Icon = "@drawable/rs", MainLauncher = true)]
     public class LoginActivity : AppCompatActivity
     {
         EditText edtUsername, edtPassword, edtIp;
@@ -30,6 +33,13 @@ namespace AplikasiMoora.Activities
         HttpResponseMessage response;
         ApiService api = new ApiService();
         Context mContext = Android.App.Application.Context;
+
+        readonly string[] permissionGroup =
+        {
+            Manifest.Permission.Internet,
+            Manifest.Permission.ReadExternalStorage
+            //Manifest.Permission.WriteExternalStorage
+        };
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -42,10 +52,20 @@ namespace AplikasiMoora.Activities
             edtPassword = (EditText)FindViewById(Resource.Id.edtPassword);
             btnLogin = (Button)FindViewById(Resource.Id.btnLogin);
 
+            RequestPermissions(permissionGroup, 0);
+
             CheckRoles();
 
             btnLogin.Click += BtnLogin_Click;
         }
+
+        //public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        //{
+        //    Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        //    base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+        //}
+
 
         public override void OnBackPressed()
         {
@@ -126,6 +146,10 @@ namespace AplikasiMoora.Activities
                         StartActivity(intent);
 
                     }
+                    else
+                    {
+                        Toast.MakeText(this, "Username Atau Password Salah", ToastLength.Long).Show();
+                    }
                 }
                 catch (Exception x)
                 {
@@ -134,12 +158,13 @@ namespace AplikasiMoora.Activities
             }
         }
 
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
 
         void CheckRoles()
         {
@@ -151,6 +176,12 @@ namespace AplikasiMoora.Activities
                 intent.SetFlags(ActivityFlags.NewTask);
                 StartActivity(intent);
             }
+            else
+            {
+                Toast.MakeText(this, "Silahkan Login Terlebih Dahulu!!", ToastLength.Long).Show();
+            }
+
         }
+
     }
 }

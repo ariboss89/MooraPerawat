@@ -22,9 +22,9 @@ namespace AplikasiMoora.Activities
     [Activity(Label = "ProsesAdd_Activity")]
     public class ProsesAdd_Activity : AppCompatActivity
     {
-        EditText edtNilai;
-        Spinner spinKriteria, spinNama;
-        ImageView imgSave;
+        //EditText edtNilai;
+        Spinner spinKriteria, spinNama, spinNilai;
+        ImageView imgSave, imgArrow;
         HasilService hsr = new HasilService();
         tb_hasil tbh = new tb_hasil();
         AlternatifService asr = new AlternatifService();
@@ -34,16 +34,31 @@ namespace AplikasiMoora.Activities
         List<string> listKrit = new List<string>();
         List<string> listAlt = new List<string>();
         ApiService api = new ApiService();
+        List<string> listNilai = new List<string>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.ProsesAdd_Layout);
 
-            edtNilai = FindViewById<EditText>(Resource.Id.edtNilai);
+            //edtNilai = FindViewById<EditText>(Resource.Id.edtNilai);
             spinKriteria = FindViewById<Spinner>(Resource.Id.spinKriteria);
             spinNama = FindViewById<Spinner>(Resource.Id.spinNama);
             imgSave = FindViewById<ImageView>(Resource.Id.imgSave);
+            spinNilai = FindViewById<Spinner>(Resource.Id.spinNilai);
+
+            string arrNilai = "PILIH,1,2,3,4,5,6,7,8,9,10";
+
+            var aa = arrNilai.Split(",");
+
+            foreach (var a in aa)
+            {
+                listNilai.Add(a);
+            }
+
+            ArrayAdapter<string> adapterNilai = new ArrayAdapter<string>(Application.Context, Android.Resource.Layout.SimpleSpinnerDropDownItem, listNilai);
+            adapterNilai.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            spinNilai.Adapter = adapterNilai;
 
             imgSave.Click += ImgSave_Click;
 
@@ -71,8 +86,21 @@ namespace AplikasiMoora.Activities
             spinKriteria.Adapter = adapter;
 
             ArrayAdapter<string> adapterAlt = new ArrayAdapter<string>(Application.Context, Android.Resource.Layout.SimpleSpinnerDropDownItem, listAlt);
-            adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+            adapterAlt.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
             spinNama.Adapter = adapterAlt;
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ProsesActivity));
+            StartActivity(intent);
+        }
+
+        public override void OnBackPressed()
+        {
 
         }
 
@@ -84,10 +112,10 @@ namespace AplikasiMoora.Activities
                 spinNama.RequestFocus();
 
             }
-            else if (edtNilai.Text.Equals(""))
+            else if (spinNilai.SelectedItem.ToString().Equals("PILIH"))
             {
-                Toast.MakeText(this, "Silahkan Di Isi !!", ToastLength.Long).Show();
-                edtNilai.RequestFocus();
+                Toast.MakeText(this, "Silahkan Pilih Nilai !!", ToastLength.Long).Show();
+                spinNilai.RequestFocus();
 
             }
             else if (spinKriteria.SelectedItem.ToString().Equals("PILIH"))
@@ -137,7 +165,7 @@ namespace AplikasiMoora.Activities
                         tbh = new tb_hasil()
                         {
                             nama = spinNama.SelectedItem.ToString(),
-                            nilai = Convert.ToDouble(edtNilai.Text),
+                            nilai = Convert.ToDouble(spinNilai.SelectedItem.ToString()),
                             kriteria = spinKriteria.SelectedItem.ToString(),
                         };
 
@@ -145,7 +173,7 @@ namespace AplikasiMoora.Activities
 
                         Toast.MakeText(this, "Data Keputusan Berhasil diTambahkan !!", ToastLength.Long).Show();
 
-                        Intent intent = new Intent(this, typeof(AlternatifActivity));
+                        Intent intent = new Intent(this, typeof(ProsesActivity));
                         intent.SetFlags(ActivityFlags.NewTask);
                         StartActivity(intent);
 

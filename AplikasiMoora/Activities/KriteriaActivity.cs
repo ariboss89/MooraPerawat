@@ -26,7 +26,7 @@ namespace AplikasiMoora.Activities
         KriteriaService ksr = new KriteriaService();
         List<tb_kriteria> listKriteria = new List<tb_kriteria>();
         KriteriaAdapter krtAdapter;
-        ImageView imgAdd;
+        ImageView imgAdd, imgArrow;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -45,6 +45,15 @@ namespace AplikasiMoora.Activities
             edtSearch.TextChanged += EdtSearch_TextChanged;
             lvKriteria.ItemClick += LvKriteria_ItemClick;
             imgAdd.Click += ImgAdd_Click;
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
         }
 
         private void ImgAdd_Click(object sender, EventArgs e)
@@ -66,8 +75,8 @@ namespace AplikasiMoora.Activities
 
         private void EdtSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
-            listKriteria.Where(x => x.nama.Contains(edtSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
-            krtAdapter = new KriteriaAdapter(this, listKriteria);
+            var data = listKriteria.Where(x => x.nama.Contains(edtSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+            krtAdapter = new KriteriaAdapter(this, data);
             lvKriteria.Adapter = krtAdapter;
         }
 
@@ -75,6 +84,11 @@ namespace AplikasiMoora.Activities
         {
             krtAdapter = new KriteriaAdapter(this, listKriteria);
             lvKriteria.Adapter = krtAdapter;
+        }
+
+        public override void OnBackPressed()
+        {
+
         }
     }
 }

@@ -26,7 +26,7 @@ namespace AplikasiMoora.Activities
         AlternatifService asr = new AlternatifService();
         List<tb_alternatif> listAlternatif = new List<tb_alternatif>();
         AlternatifAdapter altAdapter;
-        ImageView imgAdd;
+        ImageView imgAdd, imgArrow;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -39,17 +39,27 @@ namespace AplikasiMoora.Activities
             lvAlternatif = FindViewById<ListView>(Resource.Id.lvAlternatif);
             edtSearch = FindViewById<EditText>(Resource.Id.edtSearch);
             imgAdd = FindViewById<ImageView>(Resource.Id.imgAdd);
+            
 
             edtSearch.TextChanged += EdtSearch_TextChanged;
 
             lvAlternatif.ItemClick += LvAlternatif_ItemClick;
 
             imgAdd.Click += ImgAdd_Click;
-
+            
             listAlternatif = new List<tb_alternatif>();
             listAlternatif = asr.ShowDataAlternatif();
 
             Tampil();
+
+            imgArrow = FindViewById<ImageView>(Resource.Id.imgArrow);
+            imgArrow.Click += ImgArrow_Click;
+        }
+
+        private void ImgArrow_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(MainActivity));
+            StartActivity(intent);
         }
 
         private void ImgAdd_Click(object sender, EventArgs e)
@@ -73,8 +83,8 @@ namespace AplikasiMoora.Activities
 
         private void EdtSearch_TextChanged(object sender, Android.Text.TextChangedEventArgs e)
         {
-            listAlternatif.Where(x => x.nama.Contains(edtSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
-            altAdapter = new AlternatifAdapter(this, listAlternatif);
+            var data = listAlternatif.Where(x => x.nama.Contains(edtSearch.Text, StringComparison.OrdinalIgnoreCase)).ToList();
+            altAdapter = new AlternatifAdapter(this, data);
             lvAlternatif.Adapter = altAdapter;
         }
 
@@ -82,6 +92,10 @@ namespace AplikasiMoora.Activities
         {
             altAdapter = new AlternatifAdapter(this, listAlternatif);
             lvAlternatif.Adapter = altAdapter;
+        }
+
+        public override void OnBackPressed()
+        {
         }
     }
 }
